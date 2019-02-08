@@ -8,11 +8,22 @@ class Box {
   boolean given = false;
   boolean error = false;
   Box(int x, int y) {
-    val = -1;
+    val = 0;
     c = 255;
     this.x = x;
     this.y = y;
     selected = false;
+  }
+  
+  Box(int x, int y, int val) {
+    c = 255;
+    this.x = x;
+    this.y = y;
+    this.val=val;
+    println(val);
+    if(val !=0) {
+      given = true; 
+    }
   }
 
   void show() {
@@ -31,7 +42,7 @@ class Box {
 
     rect(x, y, w-2, w-2);
 
-    if (val>=0) {
+    if (val>=1) {
       textSize(50);
       fill(0);
       text(val, x+17, y+53);
@@ -41,7 +52,7 @@ class Box {
   void check(int r, int c) {
     boolean temperror = false;
 
-    if (this.val != -1) {
+    if (this.val != 0) {
       for (Box b : grid[r]) {
         if (b != this) {
           if (b.val == this.val) {

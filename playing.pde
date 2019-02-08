@@ -25,7 +25,7 @@ void mousePressed() {
     }
 
 
-    if (!grid[mouseY/w][mouseX/w].given) {
+    if (mouseY/w < 9 && mouseX/w < 9 && !grid[mouseY/w][mouseX/w].given) {
       grid[mouseY/w][mouseX/w].selected = true;
     }
   }
@@ -58,7 +58,7 @@ boolean hasWon() {
   boolean won = true;
   for (int r1 = 0; r1 < 9; r1++) {
     for (int c1 = 0; c1 < 9; c1++) {
-      if (grid[r1][c1].error == true || grid[r1][c1].val == -1) {
+      if (grid[r1][c1].error == true || grid[r1][c1].val == 0) {
         won = false;
       }
     }
