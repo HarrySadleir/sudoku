@@ -14,15 +14,15 @@ class Box {
     this.y = y;
     selected = false;
   }
-  
+
   Box(int x, int y, int val) {
     c = 255;
     this.x = x;
     this.y = y;
     this.val=val;
     println(val);
-    if(val !=0) {
-      given = true; 
+    if (val !=0) {
+      given = true;
     }
   }
 
@@ -89,8 +89,7 @@ class Box {
           }
         }
       }
-
-      error = temperror;
     }
+    error = temperror;
   }
 }

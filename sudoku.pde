@@ -9,7 +9,7 @@ void setup() {
   w = 600/9;
 
   textMode(CENTER);
-  String[] sudoku = loadStrings("data/easySudoku" + int(random(0,1)) + ".txt");
+  String[] sudoku = loadStrings("data/easySudoku" + int(random(0,10)) + ".txt");
   for (int r = 0; r < grid.length; r++) {
     for (int c = 0; c < grid[r].length; c++) {
       grid[r][c] = new Box((c)*w, (r)*w, sudoku[r].charAt(c) - 48);

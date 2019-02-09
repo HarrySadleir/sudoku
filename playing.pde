@@ -10,8 +10,8 @@ void playing() {
       bigGrid[r][c].show();
     }
   }
-  
-  if(hasWon()) {
+
+  if (hasWon()) {
     mode = 2;
   }
 }
@@ -40,11 +40,12 @@ void keyPressed() {
 
           if (int(key) >= 49 && int(key) <= 57) {
             grid[r][c].val = key-48;
-
-            for (int r1 = 0; r1 < 9; r1++) {
-              for (int c1 = 0; c1 < 9; c1++) {
-                grid[r1][c1].check(r1, c1);
-              }
+          } else if(int(key)==48||keyCode==BACKSPACE) {
+            grid[r][c].val = 0;
+          }
+          for (int r1 = 0; r1 < 9; r1++) {
+            for (int c1 = 0; c1 < 9; c1++) {
+              grid[r1][c1].check(r1, c1);
             }
           }
         }
